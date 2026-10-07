@@ -1,0 +1,7 @@
+# private / local only
+.claude/
+notes/
+
+# OS clutter
+.DS_Store
+__MACOSX/

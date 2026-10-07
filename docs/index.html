@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIRROR 2027 · Meta-Science in AI Security Research</title>
+  <meta name="description" content="MIRROR: 1st Workshop on Meta-Science in AI Security Research, co-located with IEEE SaTML 2027 in Reykjavík, Iceland, on May 3, 2027.">
+  <meta name="keywords" content="meta-science, meta-research, AI security, machine learning security, reproducibility, evaluation, peer review, SaTML, workshop">
+  <meta name="theme-color" content="#070B24">
+  <meta property="og:title" content="MIRROR 2027 · Meta-Science in AI Security Research">
+  <meta property="og:description" content="A half-day workshop at IEEE SaTML 2027 on how we do AI security research, and how to do it better. Call for lightning talks open.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav flip-target" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" id="brand" aria-label="MIRROR home">
+        <img src="img/logo.svg" alt="" width="28" height="28">
+        <span>MIRROR <span class="brand-year">2027</span></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#cfp">Call for talks</a></li>
+        <li><a href="#dates">Dates</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#organizers">Organizers</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero flip-target" id="top">
+    <div class="sky" aria-hidden="true">
+      <div class="stars stars-a"></div>
+      <div class="stars stars-b"></div>
+      <div class="aurora" id="aurora"><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow">1<sup>st</sup> Workshop on Meta-Science in AI Security Research</p>
+
+      <div class="stage">
+        <div class="above">
+          <svg class="range range-back" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 220V170l90-22 70 10 90-40 80 18 70-36 60 20 80-48 70 34 90-26 90 30 80-22 90 28 70-12 90 26 80-14 90 30 90-18 90 22V220z"/>
+          </svg>
+          <svg class="range range-front" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 220v-36l80-8 90-24 60 10 80-34 50 14 60-44 40 12 44-58 26-14 30 22 60 70 80 20 90-12 80 26 90-8 70 20 90-18 80 16 90-10 80 22 70-6 60 14V220z"/>
+          </svg>
+          <h1 class="title" id="mirror-title" tabindex="0">
+            <span class="t-word">MIRROR</span>
+            <span class="t-claim" aria-hidden="true"></span>
+            <span class="sr-only">: Meta-science in AI Security Research — Reflection, Oversight, and Rigor</span>
+          </h1>
+        </div>
+
+        <div class="waterline" aria-hidden="true"></div>
+
+        <div class="below" aria-hidden="true">
+          <div class="ripple">
+            <svg class="range range-back" viewBox="0 0 1440 220" preserveAspectRatio="none">
+              <path d="M0 220V170l90-22 70 10 90-40 80 18 70-36 60 20 80-48 70 34 90-26 90 30 80-22 90 28 70-12 90 26 80-14 90 30 90-18 90 22V220z"/>
+            </svg>
+            <svg class="range range-front" viewBox="0 0 1440 220" preserveAspectRatio="none">
+              <path d="M0 220v-36l80-8 90-24 60 10 80-34 50 14 60-44 40 12 44-58 26-14 30 22 60 70 80 20 90-12 80 26 90-8 70 20 90-18 80 16 90-10 80 22 70-6 60 14V220z"/>
+            </svg>
+            <div class="reflection"><span class="r-word">MIRROR</span></div>
+          </div>
+          <span class="r-caveat" id="caveat"></span>
+        </div>
+      </div>
+
+      <p class="hero-meta">
+        <span>May 3, 2027</span><span class="dot">·</span><span>Reykjavík, Iceland</span><span class="dot">·</span><span>co-located with <a href="https://satml.org/" target="_blank" rel="noopener">IEEE SaTML 2027</a></span>
+      </p>
+
+      <div class="cta">
+        <a class="btn btn-primary" href="#cfp">Submit a lightning talk</a>
+        <a class="btn" href="#dates">Important dates</a>
+        <a class="btn" href="#program">Program</a>
+      </div>
+    </div>
+
+    <p class="night-note" id="night-note" hidden></p>
+  </header>
+
+  <!-- Water-ripple filter used by the reflection -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="water" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.004 0.09" numOctaves="2" seed="7" result="noise">
+        <animate attributeName="baseFrequency" dur="14s" values="0.004 0.09;0.006 0.12;0.004 0.09" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
+  <main class="flip-target">
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <figure class="epigraph">
+          <blockquote>“The first principle is that you must not fool yourself — and you are <button type="button" class="fool" id="fool">the easiest person to fool</button>.”</blockquote>
+          <figcaption>— Richard Feynman, <cite>Cargo Cult Science</cite> (1974)</figcaption>
+        </figure>
+
+        <div class="about-grid">
+          <div>
+            <p class="kicker">Why a mirror</p>
+            <h2>AI security is good at finding flaws in other people’s claims. Turning that scrutiny on ourselves is harder.</h2>
+          </div>
+          <div class="prose">
+            <p>Our community has made real progress, and much of it came from refusing to take claims at face value. <strong>Yet</strong> defenses that looked robust have repeatedly fallen to adaptive attacks. Privacy evaluations have measured the average case when the worst case was the point. Datasets have carried biases and label errors into reported results. Small slips like these can go unnoticed all the way from data collection to the conclusions in a paper.</p>
+            <p>In most fields, a slip like that is just a wasted result. In security, adversaries go looking for any gap between claimed and actual robustness, so the slip becomes a <em>false sense of security</em>. Other sciences have long studied how incentives and habits shape which findings get published and trusted. AI security is starting to ask the same questions, mostly in scattered papers. MIRROR is a place to ask them together.</p>
+          </div>
+        </div>
+
+        <div class="directions">
+          <article class="dir">
+            <div class="dir-icon" aria-hidden="true">←</div>
+            <h3>Looking backward</h3>
+            <p>What have we gotten wrong? Audits of past practice: pitfalls, broken evaluations, threat models that didn’t hold, and the negative results that never got published.</p>
+          </article>
+          <article class="dir">
+            <div class="dir-icon" aria-hidden="true">→</div>
+            <h3>Looking forward</h3>
+            <p>How do we get it right the first time? Evaluation protocols, reproducible artifacts, data and label quality, and responsible disclosure, built in before mistakes happen.</p>
+          </article>
+          <article class="dir">
+            <div class="dir-icon" aria-hidden="true">⟲</div>
+            <h3>Looking inward</h3>
+            <p>How do we actually do research? Finding signal in a flood of papers, communicating ideas clearly, and the changing role of LLMs in ideation, writing, and peer review.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reflections: rotating "did you know" notes -->
+    <section id="reflections" class="section section-alt">
+      <div class="container">
+        <p class="kicker">Moments of reflection</p>
+        <h2>Meta-science is research about research. Here is what it has already changed.</h2>
+
+        <div class="carousel" id="carousel" aria-roledescription="carousel" aria-label="Papers that changed how the field does research">
+          <div class="slide-wrap" aria-live="polite">
+            <article class="slide" id="slide"></article>
+          </div>
+          <div class="carousel-controls">
+            <button class="icon-btn" id="prev" aria-label="Previous note">‹</button>
+            <div class="dots" id="dots" role="tablist"></div>
+            <button class="icon-btn" id="next" aria-label="Next note">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topics -->
+    <section id="topics" class="section">
+      <div class="container">
+        <p class="kicker">Topics of interest</p>
+        <h2>We welcome talks on meta-science and meta-research in secure and trustworthy ML, including:</h2>
+        <ul class="topics">
+          <li><h3>Domain-specific dos and don’ts</h3><p>Common pitfalls across the ML pipeline, and those specific to individual domains.</p></li>
+          <li><h3>Reproducibility and replicability</h3><p>Artifact availability, dataset and benchmark decay, reproducibility crises in trustworthy ML.</p></li>
+          <li><h3>Threat model assumptions</h3><p>Defining realistic and tight threat models; adaptive attacks.</p></li>
+          <li><h3>AI in the research process</h3><p>LLM reliability, LLM-assisted experimentation and review, pitfalls unique to LLM-centric research.</p></li>
+          <li><h3>Publication bias and negative results</h3><p>The value, and under-publication, of failed defenses, null results, and non-replications.</p></li>
+          <li><h3>Ethics and responsible disclosure</h3><p>Ethical review processes tailored to adversarial and security research.</p></li>
+          <li><h3>Data and label quality</h3><p>Sampling bias, label inaccuracy, spurious correlations, dataset transparency.</p></li>
+          <li><h3>Science of security</h3><p>Positions on what security research should focus on.</p></li>
+          <li><h3>Peer review and evaluation practices</h3><p>Reviewer incentives, novelty bias, and reforming review in security venues.</p></li>
+          <li><h3>Peer review and AI</h3><p>Using AI reliably in review, and detecting its misuse.</p></li>
+          <li><h3>Cross-community comparisons</h3><p>What ML security can learn from meta-research in clinical trials, systems research, HCI, and beyond.</p></li>
+          <li><h3>Science of doing research</h3><p>Where to look for ideas, deciding what matters in a sea of papers, presenting work.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Call for talks -->
+    <section id="cfp" class="section section-alt">
+      <div class="container">
+        <p class="kicker">Call for lightning talks</p>
+        <h2>Seen something the field should talk about? Give a lightning talk.</h2>
+
+        <div class="cfp-grid">
+          <div class="prose">
+            <ul class="questions">
+              <li>Have you run into the same methodological flaw in five papers this year?</li>
+              <li>Have you tried to reproduce a result and failed, or watched a benchmark quietly decay?</li>
+              <li>Do you review papers and suspect some were written by agents?</li>
+              <li>Have you noticed academia’s priorities drifting away from what practitioners need?</li>
+            </ul>
+            <p>Then you already have a talk. MIRROR invites short talks that surface observations, pitfalls, positions, or lessons learned, so the community can learn from them before repeating them. Early-career and senior researchers, industry practitioners, reviewers, and policy makers are all welcome.</p>
+            <p>Already published a paper on one of these topics? You’re welcome to submit an abstract about it too.</p>
+          </div>
+
+          <aside class="card format">
+            <h3>Format</h3>
+            <dl>
+              <div><dt>Submission</dt><dd>Talk proposal, up to 1 page (excluding references)</dd></div>
+              <div><dt>Talk</dt><dd>10 minutes + 5 minutes Q&amp;A (shorter talks welcome)</dd></div>
+              <div><dt>Content</dt><dd>Peer-reviewed or preliminary work</dd></div>
+              <div><dt>Proceedings</dt><dd>Non-archival</dd></div>
+              <div><dt>Selection</dt><dd>By a committee led by the workshop organizers</dd></div>
+            </dl>
+            <!-- TODO: replace with the HotCRP link once the instance is set up -->
+            <a class="btn btn-primary btn-block is-pending" href="#cfp" aria-disabled="true">Submission site opens soon</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dates -->
+    <section id="dates" class="section">
+      <div class="container">
+        <p class="kicker">Important dates</p>
+        <h2>All deadlines are 23:59 <abbr id="aoe" title="Anywhere on Earth (UTC−12)">AoE</abbr>.</h2>
+
+        <ol class="dates">
+          <li data-deadline="2026-12-18T11:59:00Z">
+            <span class="date-label">Submission deadline</span>
+            <time datetime="2026-12-17">Dec 17, 2026</time>
+          </li>
+          <li data-deadline="2027-01-29T11:59:00Z">
+            <span class="date-label">Acceptance notification</span>
+            <time datetime="2027-01-28">Jan 28, 2027</time>
+          </li>
+          <li data-deadline="2027-05-03T09:00:00Z">
+            <span class="date-label">Workshop</span>
+            <time datetime="2027-05-03">May 3, 2027</time>
+          </li>
+        </ol>
+        <p class="countdown" id="countdown" hidden></p>
+      </div>
+    </section>
+
+    <!-- Program -->
+    <section id="program" class="section section-alt">
+      <div class="container">
+        <p class="kicker">Program</p>
+        <h2>A half-day of reflection: one keynote, lightning talks, and a panel.</h2>
+
+        <article class="keynote card">
+          <div class="avatar avatar-lg" aria-hidden="true">BB</div>
+          <!-- TODO: swap the initials for a photo: <img class="avatar avatar-lg" src="img/biggio.jpg" alt="Battista Biggio"> -->
+          <div>
+            <p class="kicker">Keynote</p>
+            <h3>Battista Biggio</h3>
+            <p class="affil">University of Cagliari, Italy</p>
+            <p class="talk-title">Talk title to be announced</p>
+            <p>Battista Biggio is a Full Professor of Computer Engineering at the University of Cagliari and one of the pioneers of machine learning security. His paper <em>Poisoning Attacks against Support Vector Machines</em> received the ICML 2022 Test of Time Award, and his <em>Wild Patterns</em> papers looked back on a decade of adversarial machine learning, an early example of the field reflecting on itself.</p>
+          </div>
+        </article>
+
+        <h3 class="sub">Schedule <span class="tag">tentative</span></h3>
+        <p class="muted">Times are local Reykjavík time (UTC+0).</p>
+        <ol class="timeline">
+          <li class="slot slot-minor"><time>09:15</time><div><strong>Opening remarks</strong></div></li>
+          <li class="slot"><time>09:30</time><div><strong>Keynote</strong><span>Battista Biggio, University of Cagliari</span></div></li>
+          <li class="slot slot-break"><time>10:30</time><div><strong>Coffee break</strong></div></li>
+          <li class="slot"><time>11:00</time><div><strong>Lightning talks</strong><span>Selected from the call for talks</span></div></li>
+          <li class="slot"><time>12:00</time><div><strong>Panel discussion</strong><span>Best practices for conducting and evaluating ML security research. Panelists to be announced.</span></div></li>
+          <li class="slot slot-minor"><time>12:45</time><div><strong>Closing remarks</strong></div></li>
+          <li class="slot slot-minor"><time>13:00</time><div><strong>Informal meetup</strong><span>An open, low-pressure space to keep the conversation going</span></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Organizers -->
+    <section id="organizers" class="section">
+      <div class="container">
+        <p class="kicker">Organizers</p>
+        <h2>The people holding the mirror</h2>
+        <!-- TODO: add homepage links and photos (img/organizers/*.jpg, square, at least 400px) -->
+        <ul class="people">
+          <li class="person">
+            <div class="avatar" aria-hidden="true">SG</div>
+            <h3>Srishti Gupta</h3>
+            <p>CISPA Helmholtz Center for Information Security</p>
+          </li>
+          <li class="person">
+            <div class="avatar" aria-hidden="true">DO</div>
+            <h3>Daryna Oliynyk</h3>
+            <p>University of Vienna &amp; SBA Research</p>
+          </li>
+          <li class="person">
+            <div class="avatar" aria-hidden="true">DA</div>
+            <h3><a href="https://informatics.tuwien.ac.at/people/daniel-arp" target="_blank" rel="noopener">Daniel Arp</a></h3>
+            <p>TU Wien</p>
+          </li>
+          <li class="person">
+            <div class="avatar" aria-hidden="true">LS</div>
+            <h3>Lea Schönherr</h3>
+            <p>CISPA Helmholtz Center for Information Security</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer flip-target">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#top"><img src="img/logo.svg" alt="" width="24" height="24"><span>MIRROR 2027</span></a>
+        <p class="muted">1<sup>st</sup> Workshop on Meta-Science in AI Security Research, co-located with <a href="https://satml.org/" target="_blank" rel="noopener">IEEE SaTML 2027</a>.</p>
+        <!-- TODO: replace with the shared organizers' address -->
+        <p class="muted">Contact: organizers’ address coming soon</p>
+      </div>
+      <div class="fineprint">
+        <div class="badges" aria-label="Artifact evaluation badges for this website">
+          <span class="badge ok">Artifacts available ✓</span>
+          <span class="badge ok">Artifacts functional ✓</span>
+          <button type="button" class="badge fail" id="reproduced">Results reproduced ✗</button>
+        </div>
+        <p>This website was evaluated on <i>n</i> = 1 browsers. Seed: 42. Results have not been independently replicated.</p>
+        <p>Effect of this footer on submissions: <button type="button" class="pval" id="pval"><i>p</i> = 0.07</button></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="js/reflections.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
