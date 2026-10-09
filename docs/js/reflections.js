@@ -1,6 +1,6 @@
 // "Moments of reflection": papers that changed how the field does research.
 // Each entry: tags (one or two of "Looking backward" | "Looking forward" | "Looking inward"),
-// optional scope (e.g. "ML research"; cards without one are about AI security), optional keynote flag,
+// optional scope (e.g. "ML research"; cards without one are about AI security), optional keynote / organizers flags,
 // question, found, changed, optional chips, and refs [{ cite, url }].
 // Citation style: initials + surname; list all authors up to four, otherwise "First et al.".
 // Keep claims conservative; double-check numbers against the papers before adding new ones.
@@ -14,11 +14,21 @@ window.REFLECTIONS = [
   },
   {
     tags: ["Looking backward"],
+    organizers: true,
     question: "Ten pitfalls in ML for security in top-venue papers.",
     found: "Arp et al. identified ten subtle pitfalls that can invalidate ML-based security research. In a study of 30 papers from top-tier security venues, the pitfalls turned out to be widespread.",
     changed: "The ten pitfalls became a shared checklist for authors and reviewers, and gave the community words for problems it had mostly discussed informally.",
     chips: ["Sampling bias", "Label inaccuracy", "Data snooping", "Spurious correlations", "Biased parameter selection", "Inappropriate baseline", "Inappropriate performance measures", "Base rate fallacy", "Lab-only evaluation", "Inappropriate threat model"],
     refs: [{ cite: "D. Arp et al. Dos and Don’ts of Machine Learning in Computer Security. USENIX Security 2022.", url: "https://www.usenix.org/conference/usenixsecurity22/presentation/arp" }]
+  },
+  {
+    tags: ["Looking backward"],
+    organizers: true,
+    question: "How reliable is LLM security research?",
+    found: "Across 72 papers from top security and software engineering venues (2023–2024), Evertz et al. found methodological pitfalls in every single one, from data leakage to ambiguous model versions. Fewer than one in six of these pitfalls were acknowledged by the original authors.",
+    changed: "LLM security research got its own checklist of pitfalls that can undermine reported results and reproducibility. It also raised an uncomfortable question: how much of what we believe about LLM security depends on experimental choices we rarely scrutinize?",
+    chips: ["Data poisoning", "Label inaccuracy", "Data leakage", "Model collapse", "Spurious correlations", "Context truncation", "Prompt sensitivity", "Surrogate fallacy", "Model ambiguity"],
+    refs: [{ cite: "J. Evertz et al. Chasing Shadows: Pitfalls in LLM Security Research. NDSS 2026.", url: "https://www.ndss-symposium.org/ndss-paper/chasing-shadows-pitfalls-in-llm-security-research/" }]
   },
   {
     tags: ["Looking backward"],
@@ -114,6 +124,4 @@ window.REFLECTIONS = [
     changed: "It sharpened the “science of security” debate and pushed the field to say more precisely what its claims are and how they could be tested.",
     refs: [{ cite: "C. Herley and P. C. van Oorschot. SoK: Science, Security and the Elusive Goal of Security as a Scientific Pursuit. IEEE S&P 2017.", url: "https://www.computer.org/csdl/proceedings-article/sp/2017/07958573/12OmNwE9OP0" }]
   }
-  // TODO (organizers): add Evertz et al., "Chasing Shadows: Pitfalls in LLM Security Research" (NDSS 2026)
-  // with a one-line summary of its pitfalls written by its authors.
 ];

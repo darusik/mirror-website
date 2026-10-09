@@ -204,7 +204,7 @@ const Eggs = (function () {
     const d = data[i];
     slide.innerHTML = `
       <div class="slide-top"><span class="slide-dyk">Did you know? · ${i + 1}/${data.length}</span>
-        <span class="slide-tags">${d.keynote ? `<span class="slide-tag slide-tag-keynote">Our keynote speaker</span>` : ""}${d.scope ? `<span class="slide-tag slide-tag-scope">${esc(d.scope)}</span>` : ""}${d.tags.map(t => `<span class="slide-tag">${esc(t)}</span>`).join("")}</span></div>
+        <span class="slide-tags">${d.keynote ? `<span class="slide-tag slide-tag-keynote">Our keynote speaker</span>` : ""}${d.organizers ? `<span class="slide-tag slide-tag-keynote">Our organizers</span>` : ""}${d.scope ? `<span class="slide-tag slide-tag-scope">${esc(d.scope)}</span>` : ""}${d.tags.map(t => `<span class="slide-tag">${esc(t)}</span>`).join("")}</span></div>
       <h3>${esc(d.question)}</h3>
       ${d.chips ? `<ul class="slide-chips">${d.chips.map(c => `<li>${esc(c)}</li>`).join("")}</ul>` : ""}
       <div class="slide-cols">
