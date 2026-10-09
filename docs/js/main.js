@@ -119,10 +119,12 @@ const Eggs = (function () {
     });
   }
 
-  // One card per new find: what just happened, then a hint for the next egg. It stays until closed.
+  // One card per new find: what just happened, then a hint for the next egg. It stays until closed,
+  // and can be minimized into a small tab on the side and reopened from there.
   function showCard(id, html) {
     if (embedded) return;
     $(".egg-card")?.remove();
+    $(".egg-pill")?.remove();
     const n = found.size, total = ids.length, next = nextHint();
     const card = document.createElement("aside");
     card.className = "egg-card";
@@ -136,10 +138,26 @@ const Eggs = (function () {
         : NEXT_RELEASE
           ? `<p class="egg-next"><span>That’s all for now</span>${NEXT_RELEASE.teaser} <a href="#cfp">Meanwhile, share what you’ve noticed in a lightning talk.</a></p>`
           : `<p class="egg-next"><span>That was the last one</span>You clearly don’t fool yourself easily. <a href="#cfp">Now share what you’ve noticed in a lightning talk.</a></p>`}
-      <button type="button" class="egg-close" aria-label="Close">×</button>`;
-    const close = () => { card.classList.add("leaving"); setTimeout(() => card.remove(), 300); };
+      <div class="egg-actions">
+        <button type="button" class="egg-min" aria-label="Minimize" title="Minimize: keep this card on the side">–</button>
+        <button type="button" class="egg-close" aria-label="Close" title="Close (your progress is saved)">×</button>
+      </div>`;
+
+    const pill = document.createElement("button");
+    pill.type = "button";
+    pill.className = "egg-pill";
+    pill.hidden = true;
+    pill.title = "Show the last reflection and the next hint";
+    pill.innerHTML = `<span aria-hidden="true">✦</span> ${n}/${total}${next ? " · Next hint" : ""}`;
+
+    const close = () => { card.classList.add("leaving"); setTimeout(() => card.remove(), 300); pill.remove(); };
+    const minimize = () => { card.hidden = true; pill.hidden = false; };
+    const restore = () => { pill.hidden = true; card.hidden = false; };
     $(".egg-close", card).addEventListener("click", close);
+    $(".egg-min", card).addEventListener("click", minimize);
+    pill.addEventListener("click", restore);
     $("#toasts").appendChild(card);
+    document.body.appendChild(pill);
   }
 
   // First time: the full card. Afterwards: only the short explanation as a toast.

@@ -411,13 +411,27 @@ body.mirrored .flip-target { transform: scaleX(-1); }
 }
 .egg-card.leaving { opacity: 0; transform: translateY(8px); transition: 0.3s; }
 .egg-count { margin: 0 0 4px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--aurora); }
-.egg-card h4 { margin: 0 0 8px; font-family: var(--serif); font-weight: 400; font-size: 21px; padding-right: 24px; }
+.egg-card h4 { margin: 0 0 8px; font-family: var(--serif); font-weight: 400; font-size: 21px; padding-right: 56px; }
 .egg-what { font-size: 15px; color: var(--ink); line-height: 1.5; }
 .egg-what small { display: block; color: var(--ink-2); font-size: 14px; margin-top: 4px; }
 .egg-next { margin: 12px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-2); line-height: 1.5; font-style: italic; }
 .egg-next span { display: block; font-style: normal; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 2px; }
-.egg-close { position: absolute; top: 8px; right: 10px; background: none; border: 0; color: var(--ink-3); font-size: 22px; line-height: 1; cursor: pointer; }
-.egg-close:hover { color: var(--ink); }
+.egg-actions { position: absolute; top: 6px; right: 8px; display: flex; gap: 2px; }
+.egg-min, .egg-close { background: none; border: 0; color: var(--ink-3); font-size: 22px; line-height: 1; cursor: pointer; padding: 2px 6px; border-radius: 6px; }
+.egg-min:hover, .egg-close:hover { color: var(--ink); background: rgba(191, 210, 255, 0.08); }
+.egg-card[hidden] { display: none; }
+
+/* minimized discovery card: a small tab on the right edge */
+.egg-pill {
+  position: fixed; z-index: 95; right: 0; bottom: 96px; padding: 10px 14px 10px 16px;
+  border-radius: 999px 0 0 999px; border: 1px solid rgba(91, 242, 176, 0.45); border-right: 0;
+  background: rgba(18, 26, 72, 0.97); color: var(--ink); font: 500 13px var(--sans); cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); animation: pill-in 0.3s ease-out;
+}
+.egg-pill span { color: var(--aurora); }
+.egg-pill:hover { background: var(--night-3); }
+.egg-pill[hidden] { display: none; }
+@keyframes pill-in { from { transform: translateX(100%); } }
 @keyframes egg-in { from { opacity: 0; transform: translateY(14px) scale(0.97); } }
 
 /* ---------- Easter egg: cherry-picked topics ---------- */
