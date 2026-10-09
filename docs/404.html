@@ -35,5 +35,17 @@
     <br>
     <a href="/">Return to the original result</a>
   </main>
+  <script>
+    // Easter egg tracker: record this find for the main page (live from 1 April 2027, or with ?eggs=all)
+    if (new Date() >= new Date("2027-04-01") || new URLSearchParams(location.search).get("eggs") === "all") try {
+      const KEY = "mirror-eggs";
+      const found = JSON.parse(localStorage.getItem(KEY) || "[]");
+      if (!found.includes("notFound")) {
+        found.push("notFound");
+        localStorage.setItem(KEY, JSON.stringify(found));
+        localStorage.setItem("mirror-eggs-pending", JSON.stringify("notFound"));
+      }
+    } catch (e) {}
+  </script>
 </body>
 </html>

@@ -22,7 +22,7 @@ Open placeholders are marked with `TODO` comments (`grep -rn TODO docs`).
 python3 -m http.server 8040 --directory docs
 ```
 
-Then open http://localhost:8040.
+Then open http://localhost:8040. (The custom 404 page only shows on GitHub Pages, not with this local server.)
 
 ## Publish
 
