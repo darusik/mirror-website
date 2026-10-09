@@ -247,21 +247,7 @@ const Eggs = (function () {
   c.addEventListener("mouseenter", stop);
   c.addEventListener("mouseleave", start);
   c.addEventListener("focusin", stop);
-  // keep the controls still: reserve the height of the tallest card
-  const wrap = $(".slide-wrap");
-  function reserveHeight() {
-    const current = i;
-    wrap.style.minHeight = "";
-    let max = 0;
-    for (i = 0; i < data.length; i++) { render(); max = Math.max(max, slide.offsetHeight); }
-    i = current;
-    render();
-    wrap.style.minHeight = max + "px";
-  }
-  let resizeTimer = null;
-  addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(reserveHeight, 150); });
-  document.fonts?.ready.then(reserveHeight);
-  reserveHeight();
+  render();
   seen.add(i);
   start();
 })();

@@ -249,8 +249,6 @@ body.night .aurora span { animation-duration: 9s; }
 
 /* ---------- Reflections carousel ---------- */
 .carousel { max-width: 880px; }
-.slide-wrap { min-height: 330px; display: flex; }
-.slide-wrap .slide { flex: 1; }
 .slide {
   border-radius: var(--radius); border: 1px solid var(--line-strong); padding: 32px 36px;
   background: radial-gradient(120% 140% at 100% 0%, rgba(164, 139, 255, 0.14), transparent 55%), var(--night-2);
@@ -271,7 +269,7 @@ body.night .aurora span { animation-duration: 9s; }
 .slide-cite p { margin: 0 0 4px; }
 .slide-cite a { color: var(--ink-2); }
 
-.carousel-controls { display: flex; align-items: center; gap: 14px; margin-top: 18px; }
+.carousel-controls { display: flex; align-items: center; justify-content: flex-end; gap: 14px; margin: -20px 0 14px; }
 .icon-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line-strong); background: transparent; color: var(--ink); font-size: 22px; line-height: 1; cursor: pointer; }
 .icon-btn:hover { border-color: var(--ice); background: rgba(191, 210, 255, 0.08); }
 .dots { display: flex; gap: 8px; flex-wrap: wrap; }
