@@ -295,6 +295,7 @@ body.night .aurora span { animation-duration: 9s; }
 .format dl div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
 .format dt { font-family: var(--mono); font-size: 13px; color: var(--ink-3); padding-top: 2px; }
 .format dd { margin: 0; color: var(--ink); font-size: 15px; }
+.format-contact { margin: 14px 0 0; text-align: center; font-size: 14px; color: var(--ink-3); }
 
 /* ---------- Dates ---------- */
 abbr[title] { text-decoration: underline dotted var(--ink-3); text-underline-offset: 5px; cursor: help; }
