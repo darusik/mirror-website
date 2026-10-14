@@ -291,7 +291,7 @@ body.night .aurora span { animation-duration: 9s; }
 .questions li::before { content: "?"; position: absolute; left: 0; top: 12px; color: var(--aurora); font-family: var(--mono); font-size: 17px; }
 .card { border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--night-2); padding: 28px; }
 .format h3 { margin-bottom: 16px; }
-.format dl { margin: 0 0 12px; }
+.format dl { margin: 0 0 20px; }
 .format dl div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
 .format dt { font-family: var(--mono); font-size: 13px; color: var(--ink-3); padding-top: 2px; }
 .format dd { margin: 0; color: var(--ink); font-size: 15px; }
@@ -454,9 +454,11 @@ body.mirrored .flip-target { transform: scaleX(-1); }
 .toast-close:hover { color: var(--ink); }
 
 /* ---------- Easter egg: hidden prompt (same colour as the card behind it) ---------- */
-.injected { margin: 4px 0 8px; font-size: 11px; line-height: 1.4; color: var(--night-2); user-select: text; }
+/* one clipped line in the card's bottom padding, so it takes no layout space */
+.format { position: relative; }
+.injected { position: absolute; left: 28px; right: 28px; bottom: 6px; margin: 0; font-size: 11px; line-height: 1.4; white-space: nowrap; overflow: hidden; color: var(--night-2); user-select: text; }
 .injected::selection { background: var(--aurora); color: #062418; }
-@media print { .injected { color: #c00 !important; } }
+@media print { .injected { position: static; margin: 12px 0 0; white-space: normal; color: #c00 !important; } }
 
 /* ---------- Easter egg: watermark sample ---------- */
 .wm-sample { display: block; margin: 8px 0 2px; padding: 8px 10px; border-radius: 8px; background: rgba(0, 0, 0, 0.25); font-family: var(--serif); font-size: 15px; line-height: 1.6; }
