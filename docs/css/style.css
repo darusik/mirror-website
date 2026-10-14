@@ -287,12 +287,13 @@ body.night .aurora span { animation-duration: 9s; }
 .cfp-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: start; }
 @media (max-width: 860px) { .cfp-grid { grid-template-columns: 1fr; } }
 .questions { list-style: none; padding: 0; margin: 0 0 28px; }
-.questions li { font-family: var(--serif); font-size: 21px; line-height: 1.4; color: var(--ink); padding: 12px 0 12px 30px; position: relative; border-bottom: 1px solid var(--line); }
-.questions li::before { content: "?"; position: absolute; left: 0; top: 12px; color: var(--aurora); font-family: var(--mono); font-size: 17px; }
+.questions li { display: flex; align-items: baseline; gap: 14px; font-family: var(--serif); font-size: 21px; line-height: 1.4; color: var(--ink); padding: 12px 0; border-bottom: 1px solid var(--line); }
+/* mirrored question marks, sitting on the same baseline as the question */
+.questions li::before { content: "?"; flex: none; width: 16px; text-align: center; color: var(--aurora); font-size: 24px; transform: scaleX(-1); }
 .card { border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--night-2); padding: 28px; }
 .format h3 { margin-bottom: 16px; }
 .format dl { margin: 0 0 20px; }
-.format dl div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+.format dl div { display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
 .format dt { font-family: var(--mono); font-size: 13px; color: var(--ink-3); padding-top: 2px; }
 .format dd { margin: 0; color: var(--ink); font-size: 15px; }
 .format dd code { font-size: 13px; overflow-wrap: anywhere; }
@@ -454,11 +455,10 @@ body.mirrored .flip-target { transform: scaleX(-1); }
 .toast-close:hover { color: var(--ink); }
 
 /* ---------- Easter egg: hidden prompt (same colour as the card behind it) ---------- */
-/* one clipped line in the card's bottom padding, so it takes no layout space */
-.format { position: relative; }
-.injected { position: absolute; left: 28px; right: 28px; bottom: 6px; margin: 0; font-size: 11px; line-height: 1.4; white-space: nowrap; overflow: hidden; color: var(--night-2); user-select: text; }
+/* sits under the last paragraph of the call for talks (same colour as the section) and wraps, so the whole sentence shows when highlighted */
+.prose .injected, .injected { margin: 4px 0 0; font-size: 11px; line-height: 1.4; color: var(--night-1); user-select: text; }
 .injected::selection { background: var(--aurora); color: #062418; }
-@media print { .injected { position: static; margin: 12px 0 0; white-space: normal; color: #c00 !important; } }
+@media print { .injected { color: #c00 !important; } }
 
 /* ---------- Easter egg: watermark sample ---------- */
 .wm-sample { display: block; margin: 8px 0 2px; padding: 8px 10px; border-radius: 8px; background: rgba(0, 0, 0, 0.25); font-family: var(--serif); font-size: 15px; line-height: 1.6; }

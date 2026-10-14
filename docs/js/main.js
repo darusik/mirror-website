@@ -36,7 +36,7 @@ const EGG_INFO = {
   watermark: { name: "Watermark", hint: "Still water reflects; disturbed water reveals what’s hidden in a text. Touch the lake." },
   rorrim:    { name: "The other side", hint: "Some addresses read better backwards. Ask the address bar for the workshop’s name the way the lake shows it.",
                explain: "You read the workshop’s name the way the lake shows it, and found the mirrored site.<small>Some things only make sense from the other side.</small>" },
-  prompt:    { name: "Hidden instructions", hint: "Not every blank line in the call for talks is blank. Careful reviewers highlight what they can’t see." },
+  prompt:    { name: "Hidden instructions", hint: "Not every empty space in the call for talks is empty. Careful reviewers highlight what they can’t see." },
   reviewer2: { name: "Reviewer 2", hint: "Every submission meets them eventually. Type their name, number included. (Gamers may know another way in.)" },
   review:    { name: "Generated review", hint: "Reviewers short on time have a new assistant. Stop everything for a minute and see who writes the review." },
   seed:      { name: "Random seed", hint: "Not happy with the aurora? One of the moments of reflection knows what results depend on. Type that word." },
