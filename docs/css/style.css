@@ -468,3 +468,7 @@ body.mirrored .flip-target { transform: scaleX(-1); }
 /* ---------- Easter egg: generated review ---------- */
 .llm-review { display: block; font-family: var(--serif); font-style: italic; line-height: 1.55; }
 .llm-review mark { background: rgba(255, 232, 154, 0.22); color: var(--note); border-radius: 3px; padding: 0 2px; }
+
+/* ---------- Footer legal line ---------- */
+.legal-line { margin-top: 18px !important; color: var(--ink-3); }
+.legal-line a { color: var(--ink-2); }
